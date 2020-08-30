@@ -26,8 +26,8 @@ class App:
         # self.btn_snapshot=tkinter.Button(window, text="Snapshot", width=50, command=self.snapshot)
         # self.btn_snapshot.pack(anchor=tkinter.CENTER, expand=True)
 
-        self.btn_stop_start=tkinter.Button(window, text="stop/start", width=50, command=self.stop_start)
-        self.btn_stop_start.pack(anchor=tkinter.CENTER, expand=True)
+        self.btn_pause_start=tkinter.Button(window, text="pause/start", width=50, command=self.pause_start)
+        self.btn_pause_start.pack(anchor=tkinter.CENTER, expand=True)
         # After it is called once, the update method will be automatically called every delay milliseconds
         self.delay = 15
 
@@ -44,7 +44,7 @@ class App:
 
         self.window.mainloop()
 
-    def stop_start(self):
+    def pause_start(self):
         self.my_cap.get_frame_num()
         if(self.start == 1):
             self.start = 0
@@ -81,7 +81,7 @@ class App:
 class MyVideoCapture:
     def __init__(self, video_source=0):
         # Open the video source
-        video_source = 'your_video_file_name.avi'
+        video_source = 'your_video_file.avi'
         self.vid = cv2.VideoCapture(video_source)
         frame_num = int(self.vid.get(cv2.CAP_PROP_FRAME_COUNT))
         print('frame_num', frame_num)
@@ -118,5 +118,7 @@ class MyVideoCapture:
 
 # Create a window and pass it to the Application object
 App(tkinter.Tk(), "Tkinter and OpenCV")
+
+
 
 
