@@ -30,10 +30,10 @@ class App:
         # self.btn_snapshot.pack(anchor=tkinter.CENTER, expand=True)
 
         self.btn_pause_start=tkinter.Button(window, text="pause/start", width=25, command=self.pause_start)
-        self.btn_pause_start.pack(anchor=tkinter.CENTER, expand=True)
+        self.btn_pause_start.pack(side = tkinter.LEFT)
 
         self.btn_cut_A_B=tkinter.Button(window, text="cutA/cutB", width=10, command=self.cutAB)
-        self.btn_cut_A_B.pack(expand=True)
+        self.btn_cut_A_B.pack(side = tkinter.LEFT)
         # After it is called once, the update method will be automatically called every delay milliseconds
         self.delay = 15
 
